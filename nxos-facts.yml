@@ -1,0 +1,17 @@
+---
+ - hosts: n9k 
+   connection: local
+   gather_facts: yes
+   vars:
+     prov:
+       host: "{{ inventory_hostname }}"
+       username: admin
+       password: "{{ password }}"
+       transport: nxapi 
+   tasks:
+     - nxos_facts: 
+         use_ssl: yes
+         validate_certs: no
+         provider: "{{ prov }}"
+         gather_subset:
+           - config

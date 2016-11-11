@@ -1,0 +1,10 @@
+---
+  - hosts: n9k
+    connection: local
+    vars:
+      - username: admin 
+    tasks: 
+      - nxos_vlan: >
+           host={{inventory_hostname}} name='TestVLAN1100' 
+           vlan_id=1100 transport=nxapi username={{username}} 
+           password={{password}} validate_certs=no use_ssl=no

@@ -1,0 +1,11 @@
+[all:vars]
+ansible_connection=local
+
+[n5k]
+10.72.86.3
+
+[n9k]
+10.72.87.234
+
+[n3k]
+10.72.87.233
